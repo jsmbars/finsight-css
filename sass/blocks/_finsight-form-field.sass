@@ -107,6 +107,24 @@ $block: ".finsight-form-field"
     &_nowrap
       white-space: nowrap
 
+    &_type_border
+      #{$block}_role_control &,
+      #{$block}_role_control-reverse &
+        align-self: stretch
+        width: auto
+        min-height: 50px
+        padding: 15px
+        margin: 0
+        border: 1px solid $c-border-primary
+        border-radius: 2px
+        white-space: nowrap
+
+      #{$block}_role_control &
+        border-right: none
+
+      #{$block}_role_control-reverse &
+        border-left: none
+
 
   // $Common form field label text
   &__label-text
@@ -115,6 +133,14 @@ $block: ".finsight-form-field"
   // $Common form field label text faded
   &__label-text-faded
     color: $c-text-secondary
+
+
+  // $Common form field label icon
+  &__label-icon
+    font-family: 'icons'
+    line-height: 1
+    font-size: inherit
+    color: inherit
 
 
   // $Common form field tags

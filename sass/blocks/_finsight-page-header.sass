@@ -43,6 +43,8 @@ $block: ".finsight-page-header"
     flex-grow: 0
     flex-shrink: 1
 
+  &_adjust_full
+
 
   // $Page header inner container
   &__inner
@@ -55,6 +57,9 @@ $block: ".finsight-page-header"
     max-width: 1200px
     margin: 0 auto
     padding: 10px 0
+
+    #{$block}_adjust_full &
+      max-width: 100%
 
 
   // $Page header navigation group

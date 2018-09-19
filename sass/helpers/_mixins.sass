@@ -14,6 +14,10 @@
   counter-reset: test-counter
 
   %counter-number
+    position: absolute
+    top: 5px
+    right: 5px
+    z-index: 100
     counter-increment: test-counter
     content: counter(test-counter)
     display: block
@@ -23,9 +27,15 @@
     color: red !important
 
   @if $depth == 1
-    & > #{$element}:before
-      @extend %counter-number
+    & > #{$element}
+      position: relative
+
+      &:before
+        @extend %counter-number
 
   @else
-    & #{$element}:before
-      @extend %counter-number
+    & #{$element}
+      position: relative
+
+      &:before
+        @extend %counter-number
