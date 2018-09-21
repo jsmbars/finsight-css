@@ -32,6 +32,9 @@ $block: ".finsight-table"
   &_page_daily-sales
     min-width: 1440px
 
+  &_page_weekly-sales
+    min-width: 1440px
+
 
   &__sorting
     position: absolute
@@ -47,7 +50,8 @@ $block: ".finsight-table"
     outline: none
     cursor: pointer
 
-    #{$block}_page_daily-sales &
+    #{$block}_page_daily-sales &,
+    #{$block}_page_weekly-sales &
       right: auto
       left: 0
 
@@ -274,7 +278,7 @@ $block: ".finsight-table"
     flex-direction: column
     justify-content: center
     align-items: stretch
-    min-height: 50px
+    min-height: 40px
     font-family: $f-sans
     font-size: 14px
     font-weight: 400
@@ -291,7 +295,8 @@ $block: ".finsight-table"
     #{$block}_type_common #{$block}__row:last-child &
       border-bottom: none
 
-    #{$block}_page_daily-sales &
+    #{$block}_page_daily-sales &,
+    #{$block}_page_weekly-sales &
       padding-left: 5px
       padding-right: 5px
 
@@ -303,9 +308,15 @@ $block: ".finsight-table"
       #{$block}_page_daily-sales &
         width: 9%
 
+      #{$block}_page_weekly-sales &
+        width: 9%
+
     // $Common table cell second column
     &:nth-child(2)
       #{$block}_page_daily-sales &
+        width: 6.5%
+
+      #{$block}_page_weekly-sales &
         width: 6.5%
 
     // $Common table cell third column
@@ -313,9 +324,15 @@ $block: ".finsight-table"
       #{$block}_page_daily-sales &
         width: 6.5%
 
+      #{$block}_page_weekly-sales &
+        width: 6.5%
+
     // $Common table cell fourth column
     &:nth-child(4)
       #{$block}_page_daily-sales &
+        width: 6.5%
+
+      #{$block}_page_weekly-sales &
         width: 6.5%
 
     // $Common table cell fifth column
@@ -323,9 +340,15 @@ $block: ".finsight-table"
       #{$block}_page_daily-sales &
         width: 6.5%
 
+      #{$block}_page_weekly-sales &
+        width: 6.5%
+
     // $Common table cell sixth column
     &:nth-child(6)
       #{$block}_page_daily-sales &
+        width: 6.5%
+
+      #{$block}_page_weekly-sales &
         width: 6.5%
 
     // $Common table cell seventh column
@@ -333,9 +356,15 @@ $block: ".finsight-table"
       #{$block}_page_daily-sales &
         width: 6.5%
 
+      #{$block}_page_weekly-sales &
+        width: 6.5%
+
     // $Common table cell eighth column
     &:nth-child(8)
       #{$block}_page_daily-sales &
+        width: 6.5%
+
+      #{$block}_page_weekly-sales &
         width: 6.5%
 
     // $Common table cell ninth column
@@ -343,9 +372,15 @@ $block: ".finsight-table"
       #{$block}_page_daily-sales &
         width: 6.5%
 
+      #{$block}_page_weekly-sales &
+        width: 6.5%
+
     // $Common table cell tenth column
     &:nth-child(10)
       #{$block}_page_daily-sales &
+        width: 6.5%
+
+      #{$block}_page_weekly-sales &
         width: 6.5%
 
     // $Common table cell eleventh column
@@ -353,9 +388,15 @@ $block: ".finsight-table"
       #{$block}_page_daily-sales &
         width: 6.5%
 
+      #{$block}_page_weekly-sales &
+        width: 6.5%
+
     // $Common table cell twelfth column
     &:nth-child(12)
       #{$block}_page_daily-sales &
+        width: 6.5%
+
+      #{$block}_page_weekly-sales &
         width: 6.5%
 
     // $Common table cell thirteenth column
@@ -363,14 +404,23 @@ $block: ".finsight-table"
       #{$block}_page_daily-sales &
         width: 6.5%
 
+      #{$block}_page_weekly-sales &
+        width: 6.5%
+
     // $Common table cell fouteenth column
     &:nth-child(14)
       #{$block}_page_daily-sales &
         width: 6.5%
 
+      #{$block}_page_weekly-sales &
+        width: 6.5%
+
     // $Common table cell fifteenth column
     &:nth-child(15)
       #{$block}_page_daily-sales &
+        width: 6.5%
+
+      #{$block}_page_weekly-sales &
         width: 6.5%
 
     // $Common table cell MOD: role header
@@ -381,22 +431,26 @@ $block: ".finsight-table"
       line-height: 1
 
     &_role_header
-      #{$block}_page_daily-sales &
+      #{$block}_page_daily-sales &,
+      #{$block}_page_weekly-sales &
         text-align: right
         font-size: 13px
         padding-left: 20px
 
       @media screen and (min-width: 2048px)
-        #{$block}_page_daily-sales &
+        #{$block}_page_daily-sales &,
+        #{$block}_page_weekly-sales &
           font-size: 14px
 
       &:nth-child(1)
-        #{$block}_page_daily-sales &
+        #{$block}_page_daily-sales &,
+        #{$block}_page_weekly-sales &
           text-align: left
           padding-left: 5px
 
       &:nth-child(11)
-        #{$block}_page_daily-sales &
+        #{$block}_page_daily-sales &,
+        #{$block}_page_weekly-sales &
           font-size: 12px
           overflow-wrap: break-word
           word-wrap: break-word
@@ -491,15 +545,18 @@ $block: ".finsight-table"
     font-weight: 400
     color: $c-text-primary
 
-    #{$block}_page_daily-sales &
+    #{$block}_page_daily-sales &,
+    #{$block}_page_weekly-sales &
       text-align: right
       font-size: 13px
 
-    #{$block}_page_daily-sales #{$block}__cell:nth-child(1) &
+    #{$block}_page_daily-sales #{$block}__cell:nth-child(1) &,
+    #{$block}_page_weekly-sales #{$block}__cell:nth-child(1) &
       text-align: left
 
     @media screen and (min-width: 2048px)
-      #{$block}_page_daily-sales &
+      #{$block}_page_daily-sales &,
+      #{$block}_page_weekly-sales &
         font-size: 14px
 
     &:before

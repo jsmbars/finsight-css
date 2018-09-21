@@ -30,6 +30,8 @@ $block: ".finsight-page-main"
 
   &_daily-sales
 
+  &_weekly-sales
+
 
   // $Page main dashboard
   // $Page main filter
@@ -176,7 +178,8 @@ $block: ".finsight-page-main"
     align-items: center
     width: 100%
 
-    #{$block}_page_daily-sales &
+    #{$block}_page_daily-sales &,
+    #{$block}_page_weekly-sales &
       align-items: flex-start
 
     &:not(:last-child)
@@ -186,7 +189,8 @@ $block: ".finsight-page-main"
       flex-direction: column
       justify-content: flex-start
 
-      #{$block}_page_daily-sales &
+      #{$block}_page_daily-sales &,
+      #{$block}_page_weekly-sales &
         align-items: center
 
 
@@ -222,21 +226,37 @@ $block: ".finsight-page-main"
 
 
   &__info-group-actions
-    #{$block}_page_daily-sales &
+    #{$block}_page_daily-sales &,
+    #{$block}_page_weekly-sales &
       flex-direction: column
       align-items: stretch
 
     @media screen and (max-width: 960px)
-      #{$block}_page_daily-sales &
+      #{$block}_page_daily-sales &,
+      #{$block}_page_weekly-sales &
         align-items: center
+
+    @media screen and (max-width: 400px)
+      #{$block}_page_daily-sales &,
+      #{$block}_page_weekly-sales &
+        width: 100%
 
 
   &__info-group-action
+    #{$block}_page_daily-sales &,
+    #{$block}_page_weekly-sales &
+      text-align: left
+
+    @media screen and (max-width: 400px)
+      #{$block}_page_daily-sales &,
+      #{$block}_page_weekly-sales &
+        width: 100%
 
     &:not(:last-child)
       margin-right: 15px
 
-      #{$block}_page_daily-sales &
+      #{$block}_page_daily-sales &,
+      #{$block}_page_weekly-sales &
         margin-right: 0
         margin-bottom: 15px
 
@@ -255,7 +275,8 @@ $block: ".finsight-page-main"
     font-weight: 400
     color: $c-text-primary
 
-    #{$block}_page_daily-sales &
+    #{$block}_page_daily-sales &,
+    #{$block}_page_weekly-sales &
       margin-bottom: 20px
 
     @media screen and (max-width: 960px)
