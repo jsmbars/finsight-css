@@ -18,6 +18,12 @@ $block: ".finsight-chart"
   display: block
   width: 100%
 
+  // $Chart role weekly heatmaps
+  &_role_heatmaps
+
+  // $Chart role weekly heatmaps details
+  &_role_heatmaps-details
+
   // $Chart role weekly sales incomings
   &_role_ws-incomings
 
@@ -44,6 +50,7 @@ $block: ".finsight-chart"
     padding-bottom: 25px
 
     @media screen and (max-width: 960px)
+      #{$block}_role_heatmaps &,
       #{$block}_role_ws-outgoings &
         flex-direction: column
 
@@ -59,6 +66,7 @@ $block: ".finsight-chart"
     flex-shrink: 1
 
     @media screen and (max-width: 960px)
+      #{$block}_role_heatmaps &,
       #{$block}_role_ws-outgoings &
         order: 99
         width: 100%
@@ -80,6 +88,7 @@ $block: ".finsight-chart"
     align-items: flex-start
 
     @media screen and (max-width: 960px)
+      #{$block}_role_heatmaps &,
       #{$block}_role_ws-outgoings &
         order: -99
         width: 100%
@@ -93,6 +102,7 @@ $block: ".finsight-chart"
         margin-bottom: 25px
 
     @media screen and (max-width: 400px)
+      #{$block}_role_heatmaps &,
       #{$block}_role_ws-incomings &,
       #{$block}_role_ws-outgoings &,
       #{$block}_role_ws-overall &
@@ -112,6 +122,7 @@ $block: ".finsight-chart"
         margin-right: 20px
 
       @media screen and (max-width: 400px)
+        #{$block}_role_heatmaps &,
         #{$block}_role_ws-incomings &,
         #{$block}_role_ws-outgoings &,
         #{$block}_role_ws-overall &
@@ -131,21 +142,24 @@ $block: ".finsight-chart"
     width: 100%
     overflow: hidden
 
-  // $Chart scroll MOD: type horizontal
+    // $Chart scroll MOD: type horizontal
     &_type_horizontal
       overflow-x: auto
 
 
   // $Chart component
   &__component
+    position: relative
     display: block
-    width: 100%
+    min-width: 100%
 
+    #{$block}_role_heatmaps &,
     #{$block}_role_ws-incomings &,
     #{$block}_role_ws-outgoings &,
     #{$block}_role_ws-overall &
       min-width: 1160px
 
+    #{$block}_role_heatmaps-details &,
     #{$block}_role_ws-incomings-details &,
     #{$block}_role_ws-outgoings-details &
       min-width: 640px
