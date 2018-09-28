@@ -27,9 +27,6 @@ $block: ".finsight-modal"
   max-width: 960px
   margin: 0 auto
 
-  &-portal &
-    z-index: 10002
-
   // $Modal window MOD: state visible
   &_state_visible
     display: block
@@ -425,16 +422,17 @@ $block: ".finsight-modal"
 
   @at-root
     // $Modal window portal
-    .ReactModalPortal,
     &-portal
 
       // $Modal window portal MOD: state hidden
       &_state_hidden
         display: none
 
+    &-portal #{&}
+      z-index: 10002
+
 
     // $Modal window overlay
-    .ReactModal__Overlay,
     &-overlay
       position: fixed !important
       top: 0 !important
@@ -446,12 +444,3 @@ $block: ".finsight-modal"
       overflow-x: hidden !important
       overflow-y: auto !important
       background-color: rgba(0,0,0,.75) !important
-
-
-    .ReactModal__Body--open
-      overflow: hidden
-
-
-    .ReactModal__Body--open.iosBugFixModalInput
-      position: fixed
-      overflow: visible
