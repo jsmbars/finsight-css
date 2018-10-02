@@ -40,6 +40,10 @@ $block: ".finsight-form-select"
   // $Common form select MOD: size small
   &_size_s
 
+  &_adjust_clear
+
+  &_adjust_light
+
 
   // $Common form select label
   &__label
@@ -141,8 +145,7 @@ $block: ".finsight-form-select"
   &__control
     position: relative
 
-    // $Common form select control MOD: adjust clear action
-    &_adjust_clear
+    #{$block}_adjust_clear &
       padding-right: 22px
 
     // $Common form select input CONTEXT: $Common form select MOD: role control
@@ -186,6 +189,9 @@ $block: ".finsight-form-select"
       -moz-appearance: none
       -webkit-appearance: none
       transition: all .3s
+
+      #{$block}_adjust_light &
+        border: none
 
       #{$block}_state_error &
         border-color: $c-accent-red
