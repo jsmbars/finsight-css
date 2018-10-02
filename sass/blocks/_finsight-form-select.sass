@@ -33,16 +33,18 @@ $block: ".finsight-form-select"
     justify-content: flex-end
     align-items: center
 
-  // $Common form select MOD: no top label
-  &_no-label
-    padding-top: 20px
-
   // $Common form select MOD: size small
   &_size_s
 
-  &_adjust_clear
+  // $Common form select MOD: adjust no top label
+  &_adjust_no-label
+    padding-top: 20px
 
-  &_adjust_light
+  // $Common form select MOD: adjust no border
+  &_adjust_no-border
+
+  // $Common form select MOD: adjust clearable
+  &_adjust_clear
 
 
   // $Common form select label
@@ -190,7 +192,7 @@ $block: ".finsight-form-select"
       -webkit-appearance: none
       transition: all .3s
 
-      #{$block}_adjust_light &
+      #{$block}_adjust_no-border &
         border: none
 
       #{$block}_state_error &

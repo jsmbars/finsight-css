@@ -36,10 +36,6 @@ $block: ".finsight-form-field"
   // $Common form field MOD: state error
   &_state_error
 
-  // $Common form field MOD: no top label
-  &_no-label
-    padding-top: 20px
-
   // $Common form field MOD: size extra extra small
   &_size_xxs
 
@@ -52,9 +48,15 @@ $block: ".finsight-form-field"
   // $Common form field MOD:  adjust quick access search
   &_adjust_quick-access-search
 
-  &_adjust_clear
+  // $Common form field MOD: adjust no top label
+  &_adjust_no-label
+    padding-top: 20px
 
-  &_adjust_light
+  // $Common form field MOD: adjust no border
+  &_adjust_no-border
+
+  // $Common form field MOD: adjust clearable
+  &_adjust_clear
 
 
   // $Common form field label
@@ -219,7 +221,7 @@ $block: ".finsight-form-field"
       #{$block}_size_s &
         width: 150px
 
-      #{$block}_adjust_light &
+      #{$block}_adjust_no-border &
         border: none
 
       #{$block}_adjust_quick-access-search &
