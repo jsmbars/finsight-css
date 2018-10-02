@@ -40,9 +40,6 @@ $block: ".finsight-form-select"
   &_adjust_no-label
     padding-top: 20px
 
-  // $Common form select MOD: adjust no border
-  &_adjust_no-border
-
   // $Common form select MOD: adjust clearable
   &_adjust_clear
 
@@ -191,9 +188,6 @@ $block: ".finsight-form-select"
       -moz-appearance: none
       -webkit-appearance: none
       transition: all .3s
-
-      #{$block}_adjust_no-border &
-        border: none
 
       #{$block}_state_error &
         border-color: $c-accent-red
