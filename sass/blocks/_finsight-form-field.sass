@@ -36,15 +36,6 @@ $block: ".finsight-form-field"
   // $Common form field MOD: state error
   &_state_error
 
-  // $Common form field MOD: size extra extra small
-  &_size_xxs
-
-  // $Common form field MOD: size extra small
-  &_size_xs
-
-  // $Common form field MOD: size small
-  &_size_s
-
   // $Common form field MOD:  adjust quick access search
   &_adjust_quick-access-search
 
@@ -109,7 +100,7 @@ $block: ".finsight-form-field"
         white-space: normal
 
     // $Common form field label MOD: size small
-    &_size_small
+    &_size_s
       font-size: 12px
 
     // $Common form field label MOD: no wrap
@@ -148,6 +139,7 @@ $block: ".finsight-form-field"
   &__label-icon
     font-family: 'icons'
     line-height: 1
+    font-weight: 400
     font-size: inherit
     color: inherit
 
@@ -208,15 +200,6 @@ $block: ".finsight-form-field"
       background-color: $c-bg-light
       border: 1px solid $c-border-primary
       border-radius: 2px
-
-      #{$block}_size_xxs &
-        width: 100px
-
-      #{$block}_size_xs &
-        width: 125px
-
-      #{$block}_size_s &
-        width: 150px
 
       #{$block}_adjust_quick-access-search &
         min-height: 40px
@@ -292,6 +275,12 @@ $block: ".finsight-form-field"
 
         #{$block}_state_error &
           color: $c-accent-red !important
+
+
+  // $Common form field third-party component wrap
+  &__component
+    display: block
+    width: 100%
 
 
   // $Common form field note
