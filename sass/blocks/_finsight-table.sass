@@ -352,10 +352,10 @@ $block: ".finsight-table"
         width: 11%
 
       #{$block}_page_daily-sales &
-        width: 6.5%
+        width: 8%
 
       #{$block}_page_weekly-sales &
-        width: 6.5%
+        width: 8%
 
     // $Common table cell fifth column
     &:nth-child(5)
@@ -363,10 +363,10 @@ $block: ".finsight-table"
         width: 11%
 
       #{$block}_page_daily-sales &
-        width: 6.5%
+        width: 5.5%
 
       #{$block}_page_weekly-sales &
-        width: 6.5%
+        width: 5.5%
 
     // $Common table cell sixth column
     &:nth-child(6)
@@ -374,10 +374,10 @@ $block: ".finsight-table"
         width: 11%
 
       #{$block}_page_daily-sales &
-        width: 6.5%
+        width: 5.5%
 
       #{$block}_page_weekly-sales &
-        width: 6.5%
+        width: 5.5%
 
     // $Common table cell seventh column
     &:nth-child(7)
@@ -396,10 +396,10 @@ $block: ".finsight-table"
         width: 11%
 
       #{$block}_page_daily-sales &
-        width: 6.5%
+        width: 8%
 
       #{$block}_page_weekly-sales &
-        width: 6.5%
+        width: 8%
 
     // $Common table cell ninth column
     &:nth-child(9)
@@ -407,10 +407,10 @@ $block: ".finsight-table"
         width: 12%
 
       #{$block}_page_daily-sales &
-        width: 6.5%
+        width: 5.5%
 
       #{$block}_page_weekly-sales &
-        width: 6.5%
+        width: 5.5%
 
     // $Common table cell tenth column
     &:nth-child(10)
@@ -654,6 +654,41 @@ $block: ".finsight-table"
     @each $range, $color in $c-heatmap
       #{$block}__cell_highlight_heatmap-#{$range} &
         @extend %heatmap-cell-text
+
+    // $Common table text MOD: color red
+    &_color_accent-red
+      color: $c-accent-red
+
+    // $Common table text MOD: color orange
+    &_color_accent-orange
+      color: $c-accent-orange
+
+    // $Common table text MOD: color yellow
+    &_color_accent-yellow
+      color: $c-accent-yellow
+
+    // $Common table text MOD: color green
+    &_color_accent-green
+      color: $c-accent-green
+
+    // $Common table text MOD: color blue
+    &_color_accent-blue
+      color: $c-accent-blue
+
+    // $Common table text MOD: color purple
+    &_color_accent-purple
+      color: $c-accent-purple
+
+    // $Common table text MOD: color pink
+    &_color_accent-pink
+      color: $c-accent-pink
+
+    // $Common table text MOD: color gray
+    &_color_gray
+      color: $c-gray-medium
+
+    &_type_bold
+      font-weight: 600
 
   &__text-nowrap
     white-space: nowrap
