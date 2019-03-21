@@ -196,6 +196,13 @@ $block: ".finsight-table"
     // $Common table row MOD: role header
     &_role_header
 
+    // $Common table row MOD: role footer
+    &_role_footer
+      #{$block}_page_daily-sales &,
+      #{$block}_page_weekly-sales &,
+      #{$block}_page_date-range-sales &
+        border-top: 2px solid $c-gray-dark
+
     // $Common table row MOD: adjust group
     &_adjust_group
       background-color: transparent
@@ -717,6 +724,7 @@ $block: ".finsight-table"
     max-width: 100%
     font-family: $f-sans
     font-size: 14px
+    line-height: 1.4
     font-weight: 400
     color: $c-text-primary
 
@@ -734,6 +742,11 @@ $block: ".finsight-table"
     #{$block}_page_weekly-sales #{$block}__cell:nth-child(1) &,
     #{$block}_page_date-range-sales #{$block}__cell:nth-child(1) &
       text-align: left
+
+    #{$block}_page_daily-sales #{$block}__cell_role_footer &,
+    #{$block}_page_weekly-sales #{$block}__cell_role_footer &,
+    #{$block}_page_date-range-sales #{$block}__cell_role_footer &
+      font-weight: 600
 
     @media screen and (min-width: 2048px)
       #{$block}_page_daily-sales &,
