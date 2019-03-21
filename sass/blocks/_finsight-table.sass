@@ -43,6 +43,9 @@ $block: ".finsight-table"
   &_page_weekly-sales
     min-width: 1600px
 
+  &_page_date-range-sales
+    min-width: 1600px
+
 
   &__sorting
     position: absolute
@@ -59,7 +62,8 @@ $block: ".finsight-table"
     cursor: pointer
 
     #{$block}_page_daily-sales &,
-    #{$block}_page_weekly-sales &
+    #{$block}_page_weekly-sales &,
+    #{$block}_page_date-range-sales &
       right: auto
       left: 0
 
@@ -304,7 +308,8 @@ $block: ".finsight-table"
       border-bottom: none
 
     #{$block}_page_daily-sales &,
-    #{$block}_page_weekly-sales &
+    #{$block}_page_weekly-sales &,
+    #{$block}_page_date-range-sales &
       padding-left: 5px
       padding-right: 5px
 
@@ -324,6 +329,9 @@ $block: ".finsight-table"
       #{$block}_page_weekly-sales &
         width: 7%
 
+      #{$block}_page_date-range-sales &
+        width: 8.5%
+
       @media screen and (max-width: 1760px)
         #{$block}_page_weekly-sales &
           width: 8.5%
@@ -339,6 +347,9 @@ $block: ".finsight-table"
       #{$block}_page_weekly-sales &
         width: 5.5%
 
+      #{$block}_page_date-range-sales &
+        width: 6%
+
     // $Common table cell third column
     &:nth-child(3)
       #{$block}_page_heatmaps &
@@ -349,6 +360,9 @@ $block: ".finsight-table"
 
       #{$block}_page_weekly-sales &
         width: 5%
+
+      #{$block}_page_date-range-sales &
+        width: 6%
 
       @media screen and (max-width: 1760px)
         #{$block}_page_weekly-sales &
@@ -365,6 +379,9 @@ $block: ".finsight-table"
       #{$block}_page_weekly-sales &
         width: 5.5%
 
+      #{$block}_page_date-range-sales &
+        width: 8%
+
       @media screen and (max-width: 1760px)
         #{$block}_page_weekly-sales &
           width: 6%
@@ -379,6 +396,9 @@ $block: ".finsight-table"
 
       #{$block}_page_weekly-sales &
         width: 8%
+
+      #{$block}_page_date-range-sales &
+        width: 5.5%
 
       @media screen and (max-width: 1760px)
         #{$block}_page_weekly-sales &
@@ -395,6 +415,9 @@ $block: ".finsight-table"
       #{$block}_page_weekly-sales &
         width: 5%
 
+      #{$block}_page_date-range-sales &
+        width: 5.5%
+
       @media screen and (max-width: 1760px)
         #{$block}_page_weekly-sales &
           width: 5.5%
@@ -409,6 +432,9 @@ $block: ".finsight-table"
 
       #{$block}_page_weekly-sales &
         width: 5%
+
+      #{$block}_page_date-range-sales &
+        width: 6%
 
       @media screen and (max-width: 1760px)
         #{$block}_page_weekly-sales &
@@ -425,6 +451,9 @@ $block: ".finsight-table"
       #{$block}_page_weekly-sales &
         width: 6%
 
+      #{$block}_page_date-range-sales &
+        width: 8%
+
     // $Common table cell ninth column
     &:nth-child(9)
       #{$block}_page_heatmaps &
@@ -435,6 +464,9 @@ $block: ".finsight-table"
 
       #{$block}_page_weekly-sales &
         width: 8%
+
+      #{$block}_page_date-range-sales &
+        width: 5%
 
       @media screen and (max-width: 1760px)
         #{$block}_page_weekly-sales &
@@ -448,6 +480,9 @@ $block: ".finsight-table"
       #{$block}_page_weekly-sales &
         width: 5%
 
+      #{$block}_page_date-range-sales &
+        width: 4.5%
+
     // $Common table cell eleventh column
     &:nth-child(11)
       #{$block}_page_daily-sales &
@@ -456,6 +491,9 @@ $block: ".finsight-table"
       #{$block}_page_weekly-sales &
         width: 4.5%
 
+      #{$block}_page_date-range-sales &
+        width: 7%
+
     // $Common table cell twelfth column
     &:nth-child(12)
       #{$block}_page_daily-sales &
@@ -463,6 +501,9 @@ $block: ".finsight-table"
 
       #{$block}_page_weekly-sales &
         width: 7%
+
+      #{$block}_page_date-range-sales &
+        width: 6%
 
       @media screen and (max-width: 1760px)
         #{$block}_page_weekly-sales &
@@ -476,6 +517,9 @@ $block: ".finsight-table"
       #{$block}_page_weekly-sales &
         width: 6%
 
+      #{$block}_page_date-range-sales &
+        width: 5.5%
+
     // $Common table cell fouteenth column
     &:nth-child(14)
       #{$block}_page_daily-sales &
@@ -483,6 +527,9 @@ $block: ".finsight-table"
 
       #{$block}_page_weekly-sales &
         width: 5%
+
+      #{$block}_page_date-range-sales &
+        width: 5.5%
 
       @media screen and (max-width: 1760px)
         #{$block}_page_weekly-sales &
@@ -496,6 +543,9 @@ $block: ".finsight-table"
       #{$block}_page_weekly-sales &
         width: 5%
 
+      #{$block}_page_date-range-sales &
+        width: 6%
+
       @media screen and (max-width: 1760px)
         #{$block}_page_weekly-sales &
           width: 5.5%
@@ -505,6 +555,9 @@ $block: ".finsight-table"
 
       #{$block}_page_weekly-sales &
         width: 6%
+
+      #{$block}_page_date-range-sales &
+        width: 7%
 
     // $Common table cell seventeenth column
     &:nth-child(17)
@@ -527,14 +580,16 @@ $block: ".finsight-table"
         text-align: right
 
       #{$block}_page_daily-sales &,
-      #{$block}_page_weekly-sales &
+      #{$block}_page_weekly-sales &,
+      #{$block}_page_date-range-sales &
         text-align: right
         font-size: 13px
         padding-left: 20px
 
       @media screen and (min-width: 2048px)
         #{$block}_page_daily-sales &,
-        #{$block}_page_weekly-sales &
+        #{$block}_page_weekly-sales &,
+        #{$block}_page_date-range-sales &
           font-size: 14px
 
       &:nth-child(1)
@@ -542,12 +597,14 @@ $block: ".finsight-table"
           text-align: left
 
         #{$block}_page_daily-sales &,
-        #{$block}_page_weekly-sales &
+        #{$block}_page_weekly-sales &,
+        #{$block}_page_date-range-sales &
           text-align: left
           padding-left: 5px
 
       &:nth-child(11)
-        #{$block}_page_daily-sales &
+        #{$block}_page_daily-sales &,
+        #{$block}_page_date-range-sales &
           font-size: 12px
           overflow-wrap: break-word
           word-wrap: break-word
@@ -667,18 +724,21 @@ $block: ".finsight-table"
       text-align: right
 
     #{$block}_page_daily-sales &,
-    #{$block}_page_weekly-sales &
+    #{$block}_page_weekly-sales &,
+    #{$block}_page_date-range-sales &
       text-align: right
       font-size: 13px
 
     #{$block}_page_heatmaps #{$block}__cell:nth-child(1) &,
     #{$block}_page_daily-sales #{$block}__cell:nth-child(1) &,
-    #{$block}_page_weekly-sales #{$block}__cell:nth-child(1) &
+    #{$block}_page_weekly-sales #{$block}__cell:nth-child(1) &,
+    #{$block}_page_date-range-sales #{$block}__cell:nth-child(1) &
       text-align: left
 
     @media screen and (min-width: 2048px)
       #{$block}_page_daily-sales &,
-      #{$block}_page_weekly-sales &
+      #{$block}_page_weekly-sales &,
+      #{$block}_page_date-range-sales &
         font-size: 14px
 
     &:before
