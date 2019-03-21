@@ -173,11 +173,6 @@ $block: ".vendor-datepicker"
       @media screen and (min-width: 0\0)
         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg==")
 
-
-      & .react-datepicker__month-select::-ms-expand,
-      & .react-datepicker__year-select::-ms-expand
-        display: none
-
       &:focus
         box-shadow: 0 0 3px -1px $c-accent-blue
 
@@ -187,6 +182,10 @@ $block: ".vendor-datepicker"
 
     & select.ui-datepicker-year
       margin-left: -1px
+
+    & select.ui-datepicker-month::-ms-expand,
+    & select.ui-datepicker-year::-ms-expand
+      display: none
 
 
     & .ui-datepicker-calendar
