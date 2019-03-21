@@ -34,6 +34,8 @@ $block: ".finsight-page-main"
 
   &_weekly-sales
 
+  &_date-range-sales
+
 
   // $Page main dashboard
   // $Page main filter
@@ -181,7 +183,6 @@ $block: ".finsight-page-main"
         width: 100%
 
 
-
   // $Page main info group
   &__info-group
     display: flex
@@ -192,7 +193,8 @@ $block: ".finsight-page-main"
 
     #{$block}_page_heatmaps &,
     #{$block}_page_daily-sales &,
-    #{$block}_page_weekly-sales &
+    #{$block}_page_weekly-sales &,
+    #{$block}_page_date-range-sales &
       align-items: flex-start
 
     &:not(:last-child)
@@ -204,7 +206,8 @@ $block: ".finsight-page-main"
 
       #{$block}_page_heatmaps &,
       #{$block}_page_daily-sales &,
-      #{$block}_page_weekly-sales &
+      #{$block}_page_weekly-sales &,
+      #{$block}_page_date-range-sales &
         align-items: center
 
 
@@ -218,6 +221,9 @@ $block: ".finsight-page-main"
       @media screen and (max-width: 960px)
         margin-bottom: 20px
 
+        #{$block}_page_date-range-sales &
+          padding-bottom: 20px
+          border-bottom: 1px solid $c-border-primary
 
 
   // $Page main info group controls
@@ -242,14 +248,16 @@ $block: ".finsight-page-main"
   &__info-group-actions
     #{$block}_page_heatmaps &,
     #{$block}_page_daily-sales &,
-    #{$block}_page_weekly-sales &
+    #{$block}_page_weekly-sales &,
+    #{$block}_page_date-range-sales &
       flex-direction: column
       align-items: stretch
 
     @media screen and (max-width: 960px)
       #{$block}_page_heatmaps &,
       #{$block}_page_daily-sales &,
-      #{$block}_page_weekly-sales &
+      #{$block}_page_weekly-sales &,
+      #{$block}_page_date-range-sales &
         flex-direction: row
         justify-content: center
         align-items: center
@@ -257,7 +265,8 @@ $block: ".finsight-page-main"
     @media screen and (max-width: 480px)
       #{$block}_page_heatmaps &,
       #{$block}_page_daily-sales &,
-      #{$block}_page_weekly-sales &
+      #{$block}_page_weekly-sales &,
+      #{$block}_page_date-range-sales &
         flex-direction: column
         justify-content: flex-start
         align-items: center
@@ -265,20 +274,23 @@ $block: ".finsight-page-main"
     @media screen and (max-width: 400px)
       #{$block}_page_heatmaps &,
       #{$block}_page_daily-sales &,
-      #{$block}_page_weekly-sales &
+      #{$block}_page_weekly-sales &,
+      #{$block}_page_date-range-sales &
         width: 100%
 
 
   &__info-group-action
     #{$block}_page_heatmaps &,
     #{$block}_page_daily-sales &,
-    #{$block}_page_weekly-sales &
+    #{$block}_page_weekly-sales &,
+    #{$block}_page_date-range-sales &
       text-align: left
 
     @media screen and (max-width: 480px)
       #{$block}_page_heatmaps &,
       #{$block}_page_daily-sales &,
-      #{$block}_page_weekly-sales &
+      #{$block}_page_weekly-sales &,
+      #{$block}_page_date-range-sales &
         width: 100%
 
     &:not(:last-child)
@@ -286,7 +298,8 @@ $block: ".finsight-page-main"
 
       #{$block}_page_heatmaps &,
       #{$block}_page_daily-sales &,
-      #{$block}_page_weekly-sales &
+      #{$block}_page_weekly-sales &,
+      #{$block}_page_date-range-sales &
         margin-right: 0
         margin-bottom: 15px
 
@@ -296,14 +309,16 @@ $block: ".finsight-page-main"
 
         #{$block}_page_heatmaps &,
         #{$block}_page_daily-sales &,
-        #{$block}_page_weekly-sales &
+        #{$block}_page_weekly-sales &,
+        #{$block}_page_date-range-sales &
           margin-bottom: 0
           margin-right: 15px
 
       @media screen and (max-width: 480px)
         #{$block}_page_heatmaps &,
         #{$block}_page_daily-sales &,
-        #{$block}_page_weekly-sales &
+        #{$block}_page_weekly-sales &,
+        #{$block}_page_date-range-sales &
           margin-right: 0
           margin-bottom: 15px
 
@@ -320,7 +335,8 @@ $block: ".finsight-page-main"
 
     #{$block}_page_heatmaps &,
     #{$block}_page_daily-sales &,
-    #{$block}_page_weekly-sales &
+    #{$block}_page_weekly-sales &,
+    #{$block}_page_date-range-sales &
       margin-bottom: 20px
 
     @media screen and (max-width: 960px)
