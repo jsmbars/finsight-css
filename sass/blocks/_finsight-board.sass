@@ -25,6 +25,8 @@ $block: ".finsight-board"
     @media screen and (max-width: 480px)
       margin-bottom: 25px
 
+  &_role_staff-costs-ntr
+
 
   // $Board inner
   &__inner
@@ -56,8 +58,15 @@ $block: ".finsight-board"
     padding: 20px
     border-bottom: 1px solid $c-border-primary
 
+    #{$block}_role_staff-costs-ntr &
+      padding-bottom: 0
+      border-bottom: none
+
     @media screen and (max-width: 480px)
       padding: 20px 15px
+
+      #{$block}_role_staff-costs-ntr &
+        flex-wrap: wrap
 
     &_adjust_actions
       @media screen and (max-width: 960px)
@@ -72,11 +81,18 @@ $block: ".finsight-board"
     #{$block}__header_adjust_actions &
       padding-right: 20px
 
-
     @media screen and (max-width: 960px)
       #{$block}__header_adjust_actions &
         width: 100%
         padding-right: 0
+
+    @media screen and (max-width: 480px)
+      #{$block}_role_staff-costs-ntr &
+        width: 100%
+        margin-bottom: 20px
+        padding-bottom: 20px
+        border-bottom: 1px solid $c-border-primary
+        text-align: center
 
 
   // $Board header toggle
@@ -118,6 +134,19 @@ $block: ".finsight-board"
         margin-bottom: 15px
 
 
+  // $Board header controls
+  &__header-controls
+    position: relative
+    flex-grow: 0
+    flex-shrink: 0
+    display: block
+    width: auto
+
+    @media screen and (max-width: 480px)
+      #{$block}_role_staff-costs-ntr &
+        margin-left: auto
+
+
   // $Board content
   &__content
     display: block
@@ -132,6 +161,97 @@ $block: ".finsight-board"
 
     @media screen and (max-width: 480px)
       padding: 20px 15px
+
+
+  &__layout
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: stretch
+    width: 100%
+
+    #{$block}_role_staff-costs-ntr &
+      min-width: 1001px
+      border: 1px solid $c-border-primary
+
+
+  // $Common table layout column
+  &__layout-column
+    position: relative
+
+    &:nth-child(1)
+      #{$block}_role_staff-costs-ntr &
+        width: 12.5%
+
+      @media screen and (max-width: 1760px)
+        #{$block}_role_staff-costs-ntr &
+            width: 16%
+
+      @media screen and (max-width: 1520px)
+        #{$block}_role_staff-costs-ntr &
+            width: 20.5%
+
+      @media screen and (max-width: 1280px)
+        #{$block}_role_staff-costs-ntr &
+            width: 26%
+
+      &:after
+        #{$block}_role_staff-costs-ntr &
+          content: ''
+          position: absolute
+          top: 0
+          bottom: 0
+          right: -1px
+          z-index: 5
+          display: block
+          width: 2px
+          height: 100%
+          background-color: $c-gray-extra-light
+
+    &:nth-child(2)
+      #{$block}_role_staff-costs-ntr &
+        width: 70%
+
+      @media screen and (max-width: 1760px)
+        #{$block}_role_staff-costs-ntr &
+            width: 63%
+
+      @media screen and (max-width: 1520px)
+        #{$block}_role_staff-costs-ntr &
+            width: 53%
+
+      @media screen and (max-width: 1280px)
+        #{$block}_role_staff-costs-ntr &
+            width: 37%
+
+    &:nth-child(3)
+      #{$block}_role_staff-costs-ntr &
+        width: 17.5%
+
+      @media screen and (max-width: 1760px)
+        #{$block}_role_staff-costs-ntr &
+            width: 21%
+
+      @media screen and (max-width: 1520px)
+        #{$block}_role_staff-costs-ntr &
+            width: 26.5%
+
+      @media screen and (max-width: 1280px)
+        #{$block}_role_staff-costs-ntr &
+            width: 37%
+
+      &:before
+        #{$block}_role_staff-costs-ntr &
+          content: ''
+          position: absolute
+          top: 0
+          bottom: 0
+          left: -1px
+          z-index: 5
+          display: block
+          width: 2px
+          height: 100%
+          background-color: $c-gray-extra-light
 
 
   // $Board title
