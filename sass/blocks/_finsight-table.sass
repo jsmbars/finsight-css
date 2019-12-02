@@ -30,21 +30,27 @@ $block: ".finsight-table"
     @media screen and (max-width: 480px)
       margin-bottom: 25px
 
-  // $Common table MOD: type common
-  &_type_common
-    display: table
-
   &_page_heatmaps
     min-width: 960px
 
   &_page_daily-sales
-    min-width: 1600px
+    min-width: 1640px
 
   &_page_weekly-sales
-    min-width: 1600px
+    min-width: 1640px
 
   &_page_date-range-sales
-    min-width: 1600px
+    min-width: 1640px
+
+  &_page_staff-costs-ntr-index
+    border: none
+
+  &_page_staff-costs-ntr-week
+    border: none
+    border-right: 2px solid $c-border-primary
+
+  &_page_staff-costs-ntr-total
+    border: none
 
 
   &__sorting
@@ -67,6 +73,14 @@ $block: ".finsight-table"
       right: auto
       left: 0
 
+    #{$block}_page_staff-costs-ntr-index &,
+    #{$block}_page_staff-costs-ntr-week &,
+    #{$block}_page_staff-costs-ntr-total &
+      top: auto
+      left: 0
+      width: auto
+      height: 20px
+
     &:before
       content: "\e92e"
       position: absolute
@@ -79,6 +93,19 @@ $block: ".finsight-table"
       color: $c-text-secondary
       transform: translateY(-50%)
       transition: all .4s
+
+      #{$block}_page_daily-sales &,
+      #{$block}_page_weekly-sales &,
+      #{$block}_page_date-range-sales &
+        right: auto
+        left: 5px
+
+      #{$block}_page_staff-costs-ntr-index &,
+      #{$block}_page_staff-costs-ntr-week &,
+      #{$block}_page_staff-costs-ntr-total &
+        right: 50%
+        transform: translate(50%, -50%)
+        font-size: 14px
 
     &:hover,
     &:focus
@@ -97,16 +124,17 @@ $block: ".finsight-table"
         content: "\e918"
 
 
-
   // $Common table group
   &__group
     position: relative
     width: 100%
     background-color: $c-bg-light
 
-    &:nth-child(odd)
-      #{$block}_type_common &
-        background-color: $c-bg-secondary
+    &:not(:nth-last-child(2))
+      #{$block}_page_staff-costs-ntr-index &,
+      #{$block}_page_staff-costs-ntr-week &,
+      #{$block}_page_staff-costs-ntr-total &
+        border-bottom: 2px solid $c-gray-medium
 
     // $Common table group MOD: highlight red medium
     &_highlight_accent-red-medium
@@ -183,18 +211,17 @@ $block: ".finsight-table"
     width: 100%
     background-color: $c-bg-light
 
-    #{$block}_type_common &
-      display: table-row
-
-    &:nth-child(odd)
-      #{$block}_type_common &
-        background-color: $c-bg-secondary
-
     &:not(:last-child)
       border-bottom: 1px solid $c-border-primary
 
     // $Common table row MOD: role header
     &_role_header
+
+      &:nth-child(2)
+        #{$block}_page_staff-costs-ntr-index &,
+        #{$block}_page_staff-costs-ntr-week &,
+        #{$block}_page_staff-costs-ntr-total &
+          border-bottom: 2px solid $c-gray-medium
 
     // $Common table row MOD: role footer
     &_role_footer
@@ -202,6 +229,11 @@ $block: ".finsight-table"
       #{$block}_page_weekly-sales &,
       #{$block}_page_date-range-sales &
         border-top: 2px solid $c-gray-dark
+
+      #{$block}_page_staff-costs-ntr-index &,
+      #{$block}_page_staff-costs-ntr-week &,
+      #{$block}_page_staff-costs-ntr-total &
+        border-top: 2px solid $c-gray-medium
 
     // $Common table row MOD: adjust group
     &_adjust_group
@@ -304,21 +336,34 @@ $block: ".finsight-table"
     color: $c-text-primary
     padding: 15px 10px
 
-    #{$block}_type_common &
-      display: table-cell
-      height: 50px
-      text-align: left
-      vertical-align: middle
-      border-bottom: 1px solid $c-border-primary
-
-    #{$block}_type_common #{$block}__row:last-child &
-      border-bottom: none
-
     #{$block}_page_daily-sales &,
     #{$block}_page_weekly-sales &,
     #{$block}_page_date-range-sales &
       padding-left: 5px
       padding-right: 5px
+
+    #{$block}_page_staff-costs-ntr-index &,
+    #{$block}_page_staff-costs-ntr-week &,
+    #{$block}_page_staff-costs-ntr-total &
+      min-height: 50px
+      padding: 3px
+
+    @media screen and (min-width: 2240px)
+      #{$block}_page_staff-costs-ntr-index &,
+      #{$block}_page_staff-costs-ntr-week &,
+      #{$block}_page_staff-costs-ntr-total &
+        padding-left: 5px
+        padding-right: 5px
+
+    @media screen and (min-width: 2480px)
+      #{$block}_page_daily-sales &,
+      #{$block}_page_weekly-sales &,
+      #{$block}_page_date-range-sales &,
+      #{$block}_page_staff-costs-ntr-index &,
+      #{$block}_page_staff-costs-ntr-week &,
+      #{$block}_page_staff-costs-ntr-total &
+        padding-left: 10px
+        padding-right: 10px
 
     &:not(:last-child)
       border-right: 1px solid $c-border-primary
@@ -339,6 +384,14 @@ $block: ".finsight-table"
       #{$block}_page_date-range-sales &
         width: 8.5%
 
+      #{$block}_page_staff-costs-ntr-index &
+        width: 25%
+        min-width: 60px
+
+      #{$block}_page_staff-costs-ntr-week &,
+      #{$block}_page_staff-costs-ntr-total &
+        width: 21.5%
+
       @media screen and (max-width: 1760px)
         #{$block}_page_weekly-sales &
           width: 8.5%
@@ -357,6 +410,13 @@ $block: ".finsight-table"
       #{$block}_page_date-range-sales &
         width: 6%
 
+      #{$block}_page_staff-costs-ntr-index &
+        width: 50%
+
+      #{$block}_page_staff-costs-ntr-week &,
+      #{$block}_page_staff-costs-ntr-total &
+        width: 21.5%
+
     // $Common table cell third column
     &:nth-child(3)
       #{$block}_page_heatmaps &
@@ -370,6 +430,14 @@ $block: ".finsight-table"
 
       #{$block}_page_date-range-sales &
         width: 6%
+
+      #{$block}_page_staff-costs-ntr-index &
+        width: 25%
+        min-width: 60px
+
+      #{$block}_page_staff-costs-ntr-week &,
+      #{$block}_page_staff-costs-ntr-total &
+        width: 16%
 
       @media screen and (max-width: 1760px)
         #{$block}_page_weekly-sales &
@@ -389,6 +457,10 @@ $block: ".finsight-table"
       #{$block}_page_date-range-sales &
         width: 8%
 
+      #{$block}_page_staff-costs-ntr-week &,
+      #{$block}_page_staff-costs-ntr-total &
+        width: 25%
+
       @media screen and (max-width: 1760px)
         #{$block}_page_weekly-sales &
           width: 6%
@@ -406,6 +478,10 @@ $block: ".finsight-table"
 
       #{$block}_page_date-range-sales &
         width: 5.5%
+
+      #{$block}_page_staff-costs-ntr-week &,
+      #{$block}_page_staff-costs-ntr-total &
+        width: 16%
 
       @media screen and (max-width: 1760px)
         #{$block}_page_weekly-sales &
@@ -586,14 +662,34 @@ $block: ".finsight-table"
       #{$block}_page_heatmaps &
         text-align: right
 
+      #{$block}_page_staff-costs-ntr-index &,
+      #{$block}_page_staff-costs-ntr-week &,
+      #{$block}_page_staff-costs-ntr-total &
+        text-align: center
+
+      #{$block}_page_staff-costs-ntr-index &,
+      #{$block}_page_staff-costs-ntr-week &,
+      #{$block}_page_staff-costs-ntr-total &
+        min-height: 80px
+
+      #{$block}_page_staff-costs-ntr-index #{$block}__row_role_header:nth-child(2) &,
+      #{$block}_page_staff-costs-ntr-week #{$block}__row_role_header:nth-child(2) &,
+      #{$block}_page_staff-costs-ntr-total #{$block}__row_role_header:nth-child(2) &
+        padding-bottom: 15px
+
+
       #{$block}_page_daily-sales &,
       #{$block}_page_weekly-sales &,
       #{$block}_page_date-range-sales &
         text-align: right
-        font-size: 13px
         padding-left: 20px
 
-      @media screen and (min-width: 2048px)
+      #{$block}_page_daily-sales &,
+      #{$block}_page_weekly-sales &,
+      #{$block}_page_date-range-sales &
+        font-size: 13px
+
+      @media screen and (min-width: 2000px)
         #{$block}_page_daily-sales &,
         #{$block}_page_weekly-sales &,
         #{$block}_page_date-range-sales &
@@ -609,6 +705,9 @@ $block: ".finsight-table"
           text-align: left
           padding-left: 5px
 
+        #{$block}_page_staff-costs-ntr-index #{$block}__row_role_header:nth-child(1) &
+          border-right: none
+
       &:nth-child(11)
         #{$block}_page_daily-sales &,
         #{$block}_page_date-range-sales &
@@ -618,6 +717,16 @@ $block: ".finsight-table"
           word-break: break-word
           hyphens: auto
 
+        @media screen and (min-width: 2000px)
+          #{$block}_page_daily-sales &,
+          #{$block}_page_date-range-sales &
+            font-size: 13px
+
+        @media screen and (min-width: 2240px)
+          #{$block}_page_daily-sales &,
+          #{$block}_page_date-range-sales &
+            font-size: 14px
+
       &:nth-child(12)
         #{$block}_page_weekly-sales &
           font-size: 12px
@@ -625,6 +734,25 @@ $block: ".finsight-table"
           word-wrap: break-word
           word-break: break-word
           hyphens: auto
+
+        @media screen and (min-width: 2000px)
+          #{$block}_page_weekly-sales &
+            font-size: 13px
+
+        @media screen and (min-width: 2240px)
+          #{$block}_page_weekly-sales &
+            font-size: 14px
+
+    &_role_footer
+      &:nth-child(1)
+        #{$block}_page_staff-costs-ntr-index &
+          width: 75%
+          min-width: 0
+
+      &:nth-child(2)
+        #{$block}_page_staff-costs-ntr-index &
+          width: 25%
+          min-width: 60px
 
     &_type_no-border
       &:not(:last-child)
@@ -737,21 +865,47 @@ $block: ".finsight-table"
       text-align: right
       font-size: 13px
 
+    #{$block}_page_staff-costs-ntr-index &,
+    #{$block}_page_staff-costs-ntr-week &,
+    #{$block}_page_staff-costs-ntr-total &
+      font-size: 12px
+
     #{$block}_page_heatmaps #{$block}__cell:nth-child(1) &,
     #{$block}_page_daily-sales #{$block}__cell:nth-child(1) &,
     #{$block}_page_weekly-sales #{$block}__cell:nth-child(1) &,
     #{$block}_page_date-range-sales #{$block}__cell:nth-child(1) &
       text-align: left
 
+    #{$block}_page_staff-costs-ntr-index #{$block}__cell:last-child &
+      text-align: center
+
     #{$block}_page_daily-sales #{$block}__cell_role_footer &,
     #{$block}_page_weekly-sales #{$block}__cell_role_footer &,
-    #{$block}_page_date-range-sales #{$block}__cell_role_footer &
+    #{$block}_page_date-range-sales #{$block}__cell_role_footer &,
+    #{$block}_page_staff-costs-ntr-index #{$block}__cell_role_header &,
+    #{$block}_page_staff-costs-ntr-index #{$block}__cell_role_footer &,
+    #{$block}_page_staff-costs-ntr-week #{$block}__cell_role_header &,
+    #{$block}_page_staff-costs-ntr-week #{$block}__cell_role_footer &,
+    #{$block}_page_staff-costs-ntr-total #{$block}__cell_role_header &,
+    #{$block}_page_staff-costs-ntr-total #{$block}__cell_role_footer &
       font-weight: 600
 
-    @media screen and (min-width: 2048px)
+    @media screen and (min-width: 2000px)
       #{$block}_page_daily-sales &,
       #{$block}_page_weekly-sales &,
       #{$block}_page_date-range-sales &
+        font-size: 14px
+
+    @media screen and (min-width: 2240px)
+      #{$block}_page_staff-costs-ntr-index &,
+      #{$block}_page_staff-costs-ntr-week &,
+      #{$block}_page_staff-costs-ntr-total &
+        font-size: 13px
+
+    @media screen and (min-width: 2480px)
+      #{$block}_page_staff-costs-ntr-index &,
+      #{$block}_page_staff-costs-ntr-week &,
+      #{$block}_page_staff-costs-ntr-total &
         font-size: 14px
 
     &:before

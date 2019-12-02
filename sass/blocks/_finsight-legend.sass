@@ -59,6 +59,16 @@ $block: ".finsight-legend"
     border-radius: 50%
     vertical-align: middle
 
+    // $Legend pointer  MOD: type square
+    &_type_square
+      border-radius: 0
+
+    // $Legend pointer  MOD: type rectangle
+    &_type_rectangle
+      width: 36px
+      border-radius: 0
+      margin-right: 5px
+
 
   // $Legend text
   &__text
@@ -69,6 +79,11 @@ $block: ".finsight-legend"
     color: $c-text-primary
     white-space: normal
     vertical-align: middle
+
+
+  // $Legend text faded
+  &__text-faded
+    color: $c-text-secondary
 
 
   // $Legend link
