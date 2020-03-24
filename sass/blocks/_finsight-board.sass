@@ -27,6 +27,8 @@ $block: ".finsight-board"
 
   &_role_staff-costs-ntr
 
+  &_role_bonuses-report
+
 
   // $Board inner
   &__inner
@@ -59,6 +61,11 @@ $block: ".finsight-board"
     border-bottom: 1px solid $c-border-primary
 
     #{$block}_role_staff-costs-ntr &
+      padding-bottom: 0
+      border-bottom: none
+
+    #{$block}_role_bonuses-report &
+      justify-content: flex-end
       padding-bottom: 0
       border-bottom: none
 
@@ -142,9 +149,13 @@ $block: ".finsight-board"
     display: block
     width: auto
 
+    #{$block}_role_bonuses-report &
+      flex-shrink: 1
+
     @media screen and (max-width: 480px)
       #{$block}_role_staff-costs-ntr &
         margin-left: auto
+        flex-shrink: 1
 
     @media screen and (min-width: 2241px)
       #{$block}_role_staff-costs-ntr &
@@ -178,6 +189,10 @@ $block: ".finsight-board"
       min-width: 1001px
       border: 1px solid $c-border-primary
 
+    #{$block}_role_bonuses-report &
+      min-width: 400px
+      border: 1px solid $c-border-primary
+
 
   // $Common table layout column
   &__layout-column
@@ -186,6 +201,9 @@ $block: ".finsight-board"
     &:nth-child(1)
       #{$block}_role_staff-costs-ntr &
         width: 13%
+
+      #{$block}_role_bonuses-report &
+        width: 40%
 
       @media screen and (max-width: 2240px)
         #{$block}_role_staff-costs-ntr &
@@ -203,13 +221,26 @@ $block: ".finsight-board"
         #{$block}_role_staff-costs-ntr &
             width: 26%
 
+      @media screen and (max-width: 960px)
+        #{$block}_role_bonuses-report &
+          width: 50%
+
+      @media screen and (max-width: 800px)
+        #{$block}_role_bonuses-report &
+          width: 60%
+
+      @media screen and (max-width: 640px)
+        #{$block}_role_bonuses-report &
+          width: 70%
+
       &:after
-        #{$block}_role_staff-costs-ntr &
+        #{$block}_role_staff-costs-ntr &,
+        #{$block}_role_bonuses-report &
           content: ''
           position: absolute
           top: 0
           bottom: 0
-          right: -1px
+          right: -2px
           z-index: 5
           display: block
           width: 2px
@@ -219,6 +250,9 @@ $block: ".finsight-board"
     &:nth-child(2)
       #{$block}_role_staff-costs-ntr &
         width: 72.5%
+
+      #{$block}_role_bonuses-report &
+        width: 60%
 
       @media screen and (max-width: 2240px)
         #{$block}_role_staff-costs-ntr &
@@ -235,6 +269,18 @@ $block: ".finsight-board"
       @media screen and (max-width: 1280px)
         #{$block}_role_staff-costs-ntr &
             width: 37%
+
+      @media screen and (max-width: 960px)
+        #{$block}_role_bonuses-report &
+          width: 50%
+
+      @media screen and (max-width: 800px)
+        #{$block}_role_bonuses-report &
+          width: 40%
+
+      @media screen and (max-width: 640px)
+        #{$block}_role_bonuses-report &
+          width: 30%
 
     &:nth-child(3)
       #{$block}_role_staff-costs-ntr &
@@ -262,7 +308,7 @@ $block: ".finsight-board"
           position: absolute
           top: 0
           bottom: 0
-          left: -1px
+          left: -2px
           z-index: 5
           display: block
           width: 2px
