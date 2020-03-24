@@ -19,6 +19,9 @@ $block: ".finsight-slideshow"
   // $Slideshow MOD: role staff costs: net turnover report
   &_role_staff-costs-ntr
 
+  // $Slideshow MOD: role bonuses report
+  &_role_bonuses-report
+
 
   // External controls
   @at-root
@@ -28,27 +31,41 @@ $block: ".finsight-slideshow"
       justify-content: flex-start
       align-items: center
 
-      & .swiper-pagination.swiper-pagination-bullets
+    .swiper-pagination.swiper-pagination-bullets
+      #{$block}-controls &
         position: static
         transform: none
         margin: 0 20px
+        text-align: left
 
-      & .swiper-pagination-bullet
+      #{$block}-controls_role_bonuses-report &
+        margin-left: 0
+
+      @media screen and (max-width: 480px)
+        #{$block}-controls_role_staff-costs-ntr &
+          margin-left: 0
+
+    .swiper-pagination-bullet
+      #{$block}-controls &
         width: 10px
         height: 10px
         background-color: $c-gray-extra-light
         opacity: 1
 
-        &:not(:last-child)
+      &:not(:last-child)
+        #{$block}-controls &
           margin-right: 5px
 
-        &:focus
+      &:focus
+        #{$block}-controls &
           outline: none
 
-      & .swiper-pagination-bullet-active
+    .swiper-pagination-bullet-active
+      #{$block}-controls &
         background-color: $c-gray-medium
 
-      & .swiper-navigation
+    .swiper-navigation
+      #{$block}-controls &
         flex-grow: 0
         flex-shrink: 0
         display: flex
@@ -56,8 +73,9 @@ $block: ".finsight-slideshow"
         justify-content: flex-start
         align-items: center
 
-      & .swiper-button-prev,
-      & .swiper-button-next
+    .swiper-button-prev,
+    .swiper-button-next
+      #{$block}-controls &
         flex-shrink: 0
         flex-grow: 0
         position: static
@@ -82,20 +100,47 @@ $block: ".finsight-slideshow"
         box-shadow: none
         opacity: 1
 
-        &:not(:last-child)
+      &:not(:last-child)
+        #{$block}-controls &
           margin-right: 10px
 
-        &:focus
+      &:focus
+        #{$block}-controls &
           outline: none
 
-      & .swiper-button-prev
+    .swiper-button-prev
+      #{$block}-controls &
         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%2382868c'%2F%3E%3C%2Fsvg%3E")
 
-      & .swiper-button-next
+    .swiper-button-next
+      #{$block}-controls &
         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%2382868c'%2F%3E%3C%2Fsvg%3E")
 
-      & .swiper-button-disabled
+    .swiper-button-disabled
+      #{$block}-controls &
         opacity: 0.5
+
+
+    .swiper-slide
+      position: relative
+
+      #{$block}_role_staff-costs-ntr &,
+      #{$block}_role_bonuses-report &
+        border-left: 2px solid $c-border-primary
+
+      &:after
+        #{$block}_role_staff-costs-ntr &,
+        #{$block}_role_bonuses-report &
+          content: ''
+          position: absolute
+          top: 0
+          bottom: 0
+          right: -2px
+          z-index: 5
+          display: block
+          width: 2px
+          height: 100%
+          background-color: $c-gray-extra-light
 
 
 
