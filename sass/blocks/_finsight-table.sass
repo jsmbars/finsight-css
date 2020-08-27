@@ -221,6 +221,28 @@ $block: ".finsight-table"
 
     // $Common table row MOD: role header
     &_role_header
+      #{$block}_page_heatmaps &
+        border-bottom: 2px solid $c-gray-dark
+
+      @media screen and (min-width: 1081px)
+        #{$block}_page_heatmaps &
+          position: sticky
+          top: 0
+          z-index: 50
+
+      // Set default position in Edge
+      @supports (-ms-ime-align: auto)
+        #{$block}_page_heatmaps &
+          position: relative
+          z-index: auto
+          top: auto
+
+      // Set default position in IE11
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+        #{$block}_page_heatmaps &
+          position: relative
+          z-index: auto
+          top: auto
 
       &:nth-child(2)
         #{$block}_page_staff-costs-ntr-index &,
@@ -241,6 +263,29 @@ $block: ".finsight-table"
       #{$block}_page_staff-costs-ntr-week &,
       #{$block}_page_staff-costs-ntr-total &
         border-top: 2px solid $c-gray-medium
+
+      #{$block}_page_heatmaps &
+        border-top: 2px solid $c-gray-dark
+
+      @media screen and (min-width: 1081px)
+        #{$block}_page_heatmaps &
+          position: sticky
+          bottom: 0
+          z-index: 50
+
+      // Set default position in Edge
+      @supports (-ms-ime-align: auto)
+        #{$block}_page_heatmaps &
+          position: relative
+          z-index: auto
+          bottom: auto
+
+      // Set default position in IE11
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+        #{$block}_page_heatmaps &
+          position: relative
+          z-index: auto
+          bottom: auto
 
     // $Common table row MOD: adjust group
     &_adjust_group
@@ -776,7 +821,13 @@ $block: ".finsight-table"
             font-size: 12px
 
     &_role_footer
+      #{$block}_page_heatmaps &
+        text-align: right
+
       &:nth-child(1)
+        #{$block}_page_heatmaps &
+          text-align: left
+
         #{$block}_page_staff-costs-ntr-index &
           width: calc(100% - 70px)
 
