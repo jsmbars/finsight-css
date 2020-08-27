@@ -25,6 +25,8 @@ $block: ".finsight-board"
     @media screen and (max-width: 480px)
       margin-bottom: 25px
 
+  &_role_heatmaps
+
   &_role_staff-costs-ntr
 
   &_role_bonuses-report
@@ -44,6 +46,10 @@ $block: ".finsight-board"
     display: block
     width: 100%
     overflow: hidden
+
+    @media screen and (min-width: 1081px)
+      #{$block}_role_heatmaps &
+        overflow: visible
 
     &_type_horizontal
       overflow-x: auto
