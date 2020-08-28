@@ -604,6 +604,7 @@ $block: ".finsight-table"
     &:nth-child(8)
       #{$block}_page_heatmaps &
         width: 11%
+        border-right: none
 
       #{$block}_page_daily-sales &
         width: 8%
@@ -617,7 +618,8 @@ $block: ".finsight-table"
     // $Common table cell ninth column
     &:nth-child(9)
       #{$block}_page_heatmaps &
-        width: 12%
+        width: 11%
+        border-left: 2px solid $c-gray-dark
 
       #{$block}_page_daily-sales &
         width: 5%
@@ -945,6 +947,10 @@ $block: ".finsight-table"
     font-weight: 400
     color: $c-text-primary
 
+    @each $range, $color in $c-heatmap
+      #{$block}__cell_highlight_heatmap-#{$range} &
+        @extend %heatmap-cell-text
+
     #{$block}_page_daily-sales &,
     #{$block}_page_weekly-sales &,
     #{$block}_page_date-range-sales &
@@ -1001,6 +1007,12 @@ $block: ".finsight-table"
     #{$block}_page_bonuses-report-week #{$block}__cell_role_header &
       font-weight: 600
 
+    #{$block}_page_heatmaps #{$block}__cell:nth-child(9) &,
+    #{$block}_page_heatmaps #{$block}__cell_role_footer &
+      color: $c-text-primary
+      font-weight: 600
+      text-shadow: 0 0 1px rgba(0,0,0,.5)
+
     @media screen and (max-width: 2480px)
       #{$block}_page_daily-sales &,
       #{$block}_page_weekly-sales &,
@@ -1052,10 +1064,6 @@ $block: ".finsight-table"
       word-wrap: break-word
       word-break: break-word
       hyphens: auto
-
-    @each $range, $color in $c-heatmap
-      #{$block}__cell_highlight_heatmap-#{$range} &
-        @extend %heatmap-cell-text
 
     // $Common table text MOD: color red
     &_color_accent-red
